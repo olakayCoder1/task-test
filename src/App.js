@@ -1,51 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState } from 'react'
-import jwt_decode from "jwt-decode"
-import { db } from './firebase';
-import { addDoc, collection, getDocs } from 'firebase/firestore'
+import Header from './components/Header';
+import Sidebar from './Sidebar';
+import MainContent from './components/MainContent';
+import { useState } from 'react';
 
 function App() {
-    const [ users , setUsers ] = useState([])
-    const usersCollection = collection(db, "users")
-    const [ newName , setNewName ] = useState("")
-    const [ age , setAge ] = useState(0)
+    
 
+  const [ showNav , setShowNav ] = useState(false)
 
-  async function addUser(){
-    await addDoc(usersCollection , { name: newName , age: Number(age)})
+  function handleNav(){
+    setShowNav(!showNav)
+    console.log('')
   }
-
-    useEffect(()=>{
-      const getUsers = async ()=>{
-        const data = await getDocs(usersCollection);
-        setUsers(data.docs.map((doc) => ({...doc.data(), id:doc.id })))
-        
-      }
-      getUsers()
-    },[])
-
-    console.log(newName , age)
+  
   return (
-    <div className=' p-4'>
-      <h2>HELLO WORLD</h2>
-      <input className='m-5' type="text" onChange={(event) => { setNewName(event.target.value)}} name="name"  placeholder='Name...'/>
-      <input className='m-4' type="number" onChange={(event) => { setAge(event.target.value)}} name="age" placeholder='Age..'/><br />
-
-      <button onClick={addUser}
-      className='m-4 p-2 rounded-md bg-green-600 text-white'>Add User</button>
-
-
-      {users.length != 0 && users.map((user, index)=>{
-        return (
-          <>
-          <h1 key={index}>{user.name} , {user.age}</h1> 
-          <button  >Increase age</button>
-          </>
-            
-        )
-      })}
+    <div className='px-3 lg:px-0 w-full h-screen'>
+      {/* HEADER SECTION */}
+      <Header handleNav={handleNav}/>
+      {/* MAIN SECTION  */}
       
+      <div className='w-full h-full flex gap-32'>
+      {/* SIDE BAR  */}
+      <Sidebar navDisplay={showNav}/>
+      <div className='w-full lg:w-3/6 h-full overflow-y-scroll pb-12'>
+      <MainContent />
+      </div>
+      
+      </div>
     </div>
   );
 }
