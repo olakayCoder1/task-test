@@ -4,7 +4,7 @@ import MainContentTrending from './MainContentTrending'
 
 function MainContent() {
   return (
-    <div className='w-full overflow-y-scroll main-container lg:w-5/12 '>
+    <div className='w-full overflow-y-scroll main-container lg:w-5/12 lg:mt-12'>
         <MainContentPopular />
         <MainContentTrending />
         <MainContentTrending />

@@ -2,13 +2,15 @@ import React from 'react'
 import {BiPlayCircle} from 'react-icons/bi'
 import {BsTextIndentLeft} from 'react-icons/bs'
 import {CgPlayListAdd} from 'react-icons/cg'
+import olakay from '../assets/olakay.jpeg'
+
 
 function MainContentPopularCard() {
   return (
     <div className=' w-[300px] h-56 border border-gray-300 p-3 rounded-lg flex flex-col justify-between cursor-pointer'>
         <div className=' flex'>
             <img className='mr-2 w-10 h-10 rounded'
-                src='https://avatars.githubusercontent.com/u/95700260?s=400&u=8a038fc4fa00588887195b84026eb610c9213b4f&v=4' />
+                src={olakay} />
             <div className=' flex flex-col overflow-hidden text-ellipsis'>
                 <h3 className=' text-base font-normal text-gray-700'>Olanrewaju Abdul-Kabeer</h3>
                 <p className='text-gray-500 text-sm font-normal truncate box-border '>hdhdhhdhdhh elements must have an alt prop, either</p>

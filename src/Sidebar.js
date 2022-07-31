@@ -17,7 +17,7 @@ function Sidebar(props) {
 
   return (
     <>
-    <div className={`fixed bg-white z-50 ${props.mobile || props.navDispla ? "w-[60%]" : "hidden"}  lg:block h-full lg:w-[18%]   border-t py-3 overflow-y-scroll`}>
+    <div className={` bg-white  ${props.mobile || props.navDispla ? "w-[60%] fixed lg:relative lg:top-16 z-50 lg:z-20" : "hidden"}  lg:block h-full lg:w-[18%]   border-t py-3 overflow-y-scroll`}>
       <div className={`${props.navDisplay ? "lg:w-full " : "lg:hidden"} duration-100`}>
         <div className=' lg:hidden flex items-center py-2'>
           <p onClick={handleNav}
