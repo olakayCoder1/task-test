@@ -32,10 +32,9 @@ function App() {
       
       <div className='w-full h-full flex gap-20'>
       {/* SIDE BAR  */}
-      <Sidebar navDisplay={showNav} mobile={mobileNav} mobileNav={handleMobileNav} handleNav={handleNav} computerNav={lgNav}/>
+        <Sidebar navDisplay={showNav} mobile={mobileNav} mobileNav={handleMobileNav} handleNav={handleNav} computerNav={lgNav}/>
       
-      <MainContent />
-      
+        <MainContent />
       
       </div>
     </div>

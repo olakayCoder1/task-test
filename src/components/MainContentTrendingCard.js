@@ -10,7 +10,7 @@ function MainContentTrendingCard() {
             src={olakay} />
 
         <div className=' w-full pt-1 px-1'>
-        <h3 className=' text-sm font-normal'>Olanrewaju Abdul-Kabeer</h3>
+        <h3 className=' text-sm font-base'>Olanrewaju Abdul-Kabeer</h3>
         <p className='text-gray-500 text-xs font-normal truncate text-ellipsis mt-2'>img elements must have an alt prop</p>
         </div>
         
