@@ -8,9 +8,10 @@ function Header(props) {
 
     function toggleBar(){
         props.handleNav()
+        props.mobileNav()
     }
   return (
-    <div className=' w-full h-16 sticky top-0 bg-white z-50'>
+    <div className=' w-full h-16 fixed top-0 bg-white z-50'>
       <div className=' w-full flex justify-between items-center lg:px-3 box-border'>
           <div className=' flex items-center py-2'>
                 <p onClick={toggleBar}

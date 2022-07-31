@@ -21,10 +21,10 @@ function MainContentTrending() {
               
           </div>
 
-          <p className='absolute top-[50%] -left-3 p-2 bg-gray-50 rounded-full border border-gray-200 cursor-pointer shadow-xl'>
+          <p className='absolute top-[50%] -left-1 p-2 bg-gray-50 rounded-full border border-gray-200 cursor-pointer shadow-xl'>
               <MdKeyboardArrowLeft className=' text-2xl font-medium'/>
              </p>
-             <p className='absolute top-[50%] -right-3 p-2 bg-gray-50 rounded-full border border-gray-200 cursor-pointer shadow-xl'>
+             <p className='absolute top-[50%] -right-1 p-2 bg-gray-50 rounded-full border border-gray-200 cursor-pointer shadow-xl'>
               <MdKeyboardArrowRight className=' text-2xl font-medium'/>
              </p>
           

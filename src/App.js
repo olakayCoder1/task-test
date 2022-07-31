@@ -8,25 +8,30 @@ import { useState } from 'react';
 function App() {
     
 
-  const [ showNav , setShowNav ] = useState(false)
+  const [ showNav , setShowNav ] = useState(false);
+  const [ mobileNav , setMobileNav ] = useState(false)
 
   function handleNav(){
     setShowNav(!showNav)
-    console.log('')
+    console.log(showNav)
+  }
+  function handleMobileNav(){
+    setMobileNav(!mobileNav)
+    console.log(mobileNav)
   }
   
   return (
     <div className='px-3 lg:px-0 w-full h-screen'>
       {/* HEADER SECTION */}
-      <Header handleNav={handleNav}/>
+      <Header handleNav={handleNav} mobileNav={handleMobileNav}/>
       {/* MAIN SECTION  */}
       
-      <div className='w-full h-full flex gap-32'>
+      <div className='w-full h-full flex gap-40'>
       {/* SIDE BAR  */}
-      <Sidebar navDisplay={showNav}/>
-      <div className='w-full lg:w-3/6 h-full overflow-y-scroll pb-12'>
+      <Sidebar navDisplay={showNav} mobile={mobileNav} mobileNav={handleMobileNav} handleNav={handleNav}/>
+      
       <MainContent />
-      </div>
+      
       
       </div>
     </div>
