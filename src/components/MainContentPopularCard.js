@@ -7,7 +7,7 @@ import olakay from '../assets/olakay.jpeg'
 
 function MainContentPopularCard() {
   return (
-    <div className=' w-[300px] h-56 border border-gray-300 p-3 rounded-lg flex flex-col justify-between cursor-pointer'>
+    <div className=' w-[290px] h-56 border border-gray-300 p-3 rounded-lg flex flex-col justify-between cursor-pointer'>
         <div className=' flex'>
             <img className='mr-2 w-10 h-10 rounded'
                 src={olakay} />
