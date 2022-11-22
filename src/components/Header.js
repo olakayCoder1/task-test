@@ -19,20 +19,26 @@ function Header(props) {
                     className=' p-3 hover:bg-gray-300 rounded-full cursor-pointer'>
                   <GiHamburgerMenu className=' text-xl font-semibold text-gray-500'/>
                 </p>
-              <h2 className=' ml-2 text-xl font-light'><spann className="hidden md:inline-block "><span className=' font-normal text-blue-500'>G</span>oogle</spann> <span>Podcasts</span></h2>
+              <h2 className=' ml-2 text-xl font-light'>
+                <span className="hidden md:inline-block ">
+                  <span className=' font-normal text-blue-500'>T</span>rackit
+                  </span>
+              </h2>
           </div>
           <div className=' grow'>
-            <div className=' lg:grow h-full max-w-[700px]'>
+            {/* <div className=' lg:grow h-full max-w-[700px]'>
                 <form className='hidden lg:block lg:grow'>   
                     <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
                     <div className="relative">
                         <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                            <svg aria-hidden="true" className="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            <svg aria-hidden="true" className="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
                         </div>
-                        <input type="search" id="default-search" className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-100  outline-none focus:shadow-md focus:bg-white focus:border-gray-50 placeholder:text-base placeholder:font-light placeholder:text-gray-300" placeholder="Search for podcasts" required />
+                        <input type="search" id="default-search" className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-100  outline-none focus:shadow-md focus:bg-white focus:border-gray-50 placeholder:text-base placeholder:font-light placeholder:text-gray-300" placeholder="Search task" required />
                     </div>
-                    </form>
-            </div>
+                </form>
+            </div> */}
           </div>
           
           <div className='float-right flex items-center'>

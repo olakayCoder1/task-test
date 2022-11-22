@@ -3,8 +3,8 @@ import {BsListUl ,BsTextIndentLeft, BsBoxArrowInUpRight} from 'react-icons/bs'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiFillHome,AiOutlinePlus} from 'react-icons/ai'
 import {CgPlayListAdd} from 'react-icons/cg'
-import SidebarRow from './SidebarRow'
-import SideNoIcon from './SideNoIcon'
+import SidebarRow from './components/SidebarRow'
+import SideNoIcon from './components/SideNoIcon'
 
 function Sidebar(props) {
 
@@ -17,14 +17,17 @@ function Sidebar(props) {
 
   return (
     <>
-    <div className="hidden bg-white w-[60%] fixed lg:relative lg:top-16 z-50 lg:z-20 lg:block h-full lg:w-[18%]   border-t py-3 overflow-y-scroll">
+    <div className="hidden bg-white w-[60%] max-w-[250px] fixed lg:relative lg:top-16 z-50 lg:z-20 lg:block h-full lg:w-[18%]   border-t py-3 overflow-y-scroll">
       <div className={`${props.computerNav ? "lg:w-full " : "lg:hidden"} duration-100`}>
         <div className=' lg:hidden flex items-center py-2'>
           <p onClick={handleNav}
               className=' p-3 hover:bg-gray-300 rounded-full cursor-pointer'>
             <GiHamburgerMenu className=' text-xl font-semibold text-gray-500'/>
           </p>
-        <h2 className=' ml-2 text-xl font-light'><spann className="hidden md:inline-block "><span className=' font-normal text-blue-500'>G</span>oogle</spann> <span>Podcasts</span></h2>
+        <h2 className=' ml-2 text-xl font-light'>
+          <span className="hidden md:inline-block ">
+            <span className=' font-normal text-blue-500'>T</span>rackit</span>
+          </h2>
         </div>
         <div className='px-6 w-full flex items-center text-sm font-medium py-3 mr-2 rounded-r-full bg-blue-100 text-blue-700'>
               <AiFillHome  className=" text-lg"/>
@@ -46,7 +49,7 @@ function Sidebar(props) {
        
     </div>
 
-    <div className={` bg-white  ${props.mobile || props.navDispla ? "w-[60%] fixed lg:relative lg:top-16 z-50 lg:z-20" : "hidden"}  lg:hidden h-full lg:w-[18%]   border-t py-1 overflow-y-scroll`}>
+    <div className={` bg-white  ${props.mobile || props.navDispla ? "w-[60%] max-w-[250px] fixed lg:relative lg:top-16 z-50 lg:z-20" : "hidden"}  lg:hidden h-full lg:w-[18%]   border-t py-1 overflow-y-scroll`}>
       <div className={`${props.navDisplay ? "lg:w-full " : "lg:hidden"} duration-100`}>
         <div className=' lg:hidden flex items-center py-2'>
           <p onClick={handleNav}

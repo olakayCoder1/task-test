@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
-import Sidebar from './Sidebar';
-import MainContent from './components/MainContent';
 import { useState } from 'react';
+import MainContent from './components/MainContent';
+import { Sidebar } from 'flowbite-react';
 
 function App() {
     
