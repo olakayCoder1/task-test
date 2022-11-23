@@ -14,8 +14,6 @@ function MainContent() {
   const [ searchValue , setSearchValue ] = useState('')
 
   useEffect(()=>{
-    // setTasks(test)
-    // setFilterResult(test)
     if (JSON.parse(localStorage.getItem('tasks'))){
       const val = JSON.parse(localStorage.getItem('tasks'))
       setActive((val?.filter((val) => val.active == true ).length))
@@ -125,33 +123,35 @@ function MainContent() {
             </form>
         </div>
         
-        <div className='flex justify-between items-center gap-2'>
-          <div className=' flex gap-2 items-center py-6'>
-            <p className=' font-bold'>Filter</p>
-            <select className='font-bold right-0 focus:ring-0 rounded-md' onChange={FilterResult}>
-              <option >All</option>
-              <option>Active</option>
-              <option>Completed</option>
-            </select>
-          </div>
-          <div className=' lg:grow h-full max-w-[300px] '>
-              <form className='grow' onSubmit={searchTask}>   
-                  <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
-                  <div className="relative">
-                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                          <svg aria-hidden="true" className="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                          </svg>
-                      </div>
-                      <input onChange={(e)=> setSearchValue(e.target.value)}
-                        type="search"  value={searchValue} 
-                        className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-100  
-                        outline-none focus:shadow-md focus:bg-white focus:border-gray-50 placeholder:text-base placeholder:font-light
-                       placeholder:text-gray-300" placeholder="Search task" name='q' />
-                  </div>
-              </form>
+        <div className='flex flex-col sm:flex-row justify-between items-center gap-2'>
+          <div className='w-full grow flex justify-between items-center gap-2 '>
+            <div className=' flex gap-2 items-center py-3 pt-6 sm:py-6'>
+              <p className=' font-bold'>Filter</p>
+              <select className='font-bold right-0 focus:ring-0 rounded-md' onChange={FilterResult}>
+                <option >All</option>
+                <option>Active</option>
+                <option>Completed</option>
+              </select>
             </div>
-          <div className=' flex gap-2 items-center py-6'>
+            <div className='grow h-full max-w-[300px] '>
+                <form className='grow' onSubmit={searchTask}>   
+                    <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                    <div className="relative">
+                        <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            <svg aria-hidden="true" className="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <input onChange={(e)=> setSearchValue(e.target.value)}
+                          type="search"  value={searchValue} 
+                          className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-100  
+                          outline-none focus:shadow-md focus:bg-white focus:border-gray-50 placeholder:text-base placeholder:font-light
+                        placeholder:text-gray-600" placeholder="Search task" name='q' />
+                    </div>
+                </form>
+              </div>
+          </div>
+          <div className=' flex gap-2 items-center  py-3 sm:py-6 min-w-[150px]'>
             <p className=' font-bold'>Active tasks : </p>
             <h2 className=' font-bold text-2xl'>{active}</h2>
           </div>
@@ -173,9 +173,6 @@ function MainContent() {
         )}
       </div>
       </div>
-
-        
-        
     </div>
   )
 }
