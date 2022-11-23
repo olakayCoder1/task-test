@@ -11,7 +11,7 @@ function TaskItem({index , description , created_at , active , deleteTask , comp
     }
 
   return (
-    <div className='text-sm font-medium flex items-center gap-3  border p-2 px-3 rounded-md'>
+    <div className='text-sm font-medium flex items-center gap-3  border p-2 px-3 rounded-md hover:border-blue-500'>
         <p className='w-10'>
         {active ? <BsSquare  className='h-5 w-5 text-blue-500 cursor-pointer' onClick={handleComplete}/> : <BsCheck2Square  className='h-5 w-5 text-blue-500 cursor-pointer'/>}
         </p>
