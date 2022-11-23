@@ -8,19 +8,11 @@ import uuid from 'react-uuid';
 function MainContent() {
  
   const [ tasks , setTasks ] = useState(()=> JSON.parse(localStorage.getItem('tasks'))|| [])
-  const [ active , setActive ] = useState(0)
   const [ filterResult , setFilterResult ] = useState(()=> JSON.parse(localStorage.getItem('tasks'))|| [] )
   const [ newTask , setNewTask ] = useState('')
   const [ searchValue , setSearchValue ] = useState('')
 
-  useEffect(()=>{
-    if (JSON.parse(localStorage.getItem('tasks'))){
-      const val = JSON.parse(localStorage.getItem('tasks'))
-      setActive((val?.filter((val) => val.active == true ).length))
-    }
-    
-  },[])
-
+  
   console.log(tasks)
   const FilterResult = (e) => {
     if (e.target.value == 'Completed' ){
@@ -74,7 +66,6 @@ function MainContent() {
         newTasks.splice(index,1)
         setTasks(newTasks);
         setFilterResult(newTasks)
-        setActive((newTasks?.filter((val) => val.active == true ).length))
         localStorage.setItem('tasks', JSON.stringify(newTasks))
         
    
@@ -85,7 +76,6 @@ function MainContent() {
         newTasks[index].active = false;
         setTasks(newTasks);
         setFilterResult(newTasks)
-        setActive((newTasks?.filter((val) => val.active == true ).length))
         localStorage.setItem('tasks', JSON.stringify(newTasks))
   }
   
@@ -124,8 +114,8 @@ function MainContent() {
         </div>
         
         <div className='flex flex-col sm:flex-row justify-between items-center gap-2'>
-          <div className='w-full grow flex justify-between items-center gap-2 '>
-            <div className=' flex gap-2 items-center py-3 pt-6 sm:py-6'>
+          <div className='w-full grow flex justify-between items-center gap-2  py-3 pt-6 sm:py-6'>
+            <div className=' flex gap-2 items-center '>
               <p className=' font-bold'>Filter</p>
               <select className='font-bold right-0 focus:ring-0 rounded-md' onChange={FilterResult}>
                 <option >All</option>
@@ -150,10 +140,6 @@ function MainContent() {
                     </div>
                 </form>
               </div>
-          </div>
-          <div className=' flex gap-2 items-center  py-3 sm:py-6 min-w-[150px]'>
-            <p className=' font-bold'>Active tasks : </p>
-            <h2 className=' font-bold text-2xl'>{active}</h2>
           </div>
         </div>
       <div className=' flex flex-col gap-2 pb-10'>
